@@ -61,3 +61,11 @@ function convertCurrency(amount, exchangeRate) {
 
 console.log(convertCurrency(100, 1.1));
 console.log(convertCurrency(250, 0.85));
+
+// Task 6: Higher-Order Functions
+let orders = [200, 600, 1200, 450, 800]; // array of orders
+function applyBulkDiscount(orders, discountFunction) {
+    return orders.map(discountFunction);
+}; // function for applying bulk discount
+
+console.log(applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount)); // [ 200, 540, 1080, 450, 720 ]
