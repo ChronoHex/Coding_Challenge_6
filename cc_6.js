@@ -33,3 +33,22 @@ const calculateBonus = (salary, performanceRating) => {
 
 console.log(calculateBonus(5000, "Excellent")); // Bonus: $1000
 console.log(calculateBonus(7000, "Good")); // Bonus: $700
+
+// Task 4: Parameters and Arguments
+function calculateSubscriptionCost(plan, months, discount = 0) {
+    let monthlyCost;
+    if (plan === "Basic") {
+        monthlyCost = 10
+    }
+    else if (plan === "Premium") {
+        monthlyCost = 20
+    }
+    else if (plan === "Enterprise") {
+        monthlyCost === 50
+    }
+    let totalCost = (monthlyCost * months) - discount;
+    return `Total Cost: $${totalCost}`;
+} // function for calculating total subscription cost
+
+console.log(calculateSubscriptionCost("Basic", 6, 10)); // Total Cost: $50
+console.log(calculateSubscriptionCost("Premium", 12, 0)); // Total Cost: $240
