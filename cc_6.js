@@ -67,5 +67,20 @@ let orders = [200, 600, 1200, 450, 800]; // array of orders
 function applyBulkDiscount(orders, discountFunction) {
     return orders.map(discountFunction);
 }; // function for applying bulk discount
+let discountFunction = amount => amount > 500 ? amount * 0.9 : amount;
+let discountedOrders = applyBulkDiscount(orders, discountFunction);
 
-console.log(applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount)); // [ 200, 540, 1080, 450, 720 ]
+console.log(discountedOrders) // [ 200, 540, 1080, 450, 720 ]
+
+// Task 7: Closures
+function createExpenseTracker() {
+    let totalExpenses = 0;
+    return function(expense) {
+        totalExpenses += expense;
+        return `Total Expenses: $${totalExpenses}`;
+    };
+}; // function to track expenses
+
+let tracker = createExpenseTracker();
+console.log(tracker(200)); // Total Expenses: $200
+console.log(tracker(150)); // Total Expenses: $350
